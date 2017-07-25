@@ -20,6 +20,10 @@ body {
   letter-spacing: .25em;
 }
 
+.poke_pic {
+  border-radius: 50%;
+}
+
 a:hover {
   padding: 20px;
   animation: pulse 1s infinite;
@@ -39,14 +43,14 @@ h5 {
   font-size: 22px;
 }
 
-.pokemon{
-  min-width: 375px;
+.pokemon {
+  min-width: 200px;
   background-color: rgb(255, 255, 255);
   padding: 10px;
   margin: 40px;
   box-sizing: border-box;
   border: 15px inset;
-  border-radius: 100px;
+  border-radius: 50%;
   border-top-color: rgba(255, 0, 0, .5);
   border-left-color: rgba(255, 0, 0, .5);
   border-right-color: rgba(225, 225, 225, .5);

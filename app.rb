@@ -7,7 +7,8 @@ require 'active_record'
 require_relative 'db/connection.rb'
 
 #Require models
-require_relative 'models/pokemon'
+require_relative 'models/pokemon/pokemon'
+require_relative 'models/trainers/trainers'
 
 get '/home' do
   @pokemons = Pokemon.all
