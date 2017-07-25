@@ -11,10 +11,10 @@ require_relative 'models/pokemon'
 
 get '/home' do
   @pokemons = Pokemon.all
-  erb :home
+  erb :"pokemon/home"
 end
 
 get '/home/:id' do
   @pokemon = Pokemon.find(params[:id])
-  erb :show
+  erb :"pokemon/show"
 end

@@ -1,0 +1,20 @@
+<h3> <%= @pokemon.name %> </h3>
+<!-- PokePic -->
+<img src="<%= @pokemon.img_url %>" alt="Profile Picture of <%= @pokemon.name %> ">
+
+<ul>
+  <!-- General Info -->
+  <li>Name: <%= @pokemon.name %> </li>
+  <li>Type: <%= @pokemon.poke_type.capitalize %> </li>
+</ul>
+
+<!-- Generates random "quote" for pokemon -->
+<p>
+  <% quotes = [ "#{@pokemon.name}, #{@pokemon.name}, #{@pokemon.name}! ", "***inquisitive look***", "#{@pokemon.name.upcase}!" ]%>
+  <%=quotes.sample %>
+</p>
+
+<p>
+  <!-- Send back to home -->
+  <a href="/home"> <== BACK BUTTON <== </a>
+</p>
