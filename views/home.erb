@@ -1,0 +1,15 @@
+<h1>Welcome to Pokemon</h1>
+
+<h3>Quick Intro</h3>
+<p>Lorem ipsum dolor sunt in culpa qui officia deserunt moll</p>
+<p>Lorem ipsum dolor sunt in culpa qui officia deserunt moll</p>
+<p>Lorem ipsum dolor sunt in culpa qui officia deserunt moll</p>
+
+<h3>Look... a wild... </h3>
+<ul>
+  <% @pokemons.each do |pokemon| %>
+  <li>
+    <a href="/home/<%= pokemon.id %>"> <%= pokemon.name %> </a>
+  </li>
+  <% end %>
+</ul>
