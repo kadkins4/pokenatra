@@ -1,20 +1,32 @@
-<h3> <%= @pokemon.name %> </h3>
 <!-- PokePic -->
-<img class="pokemon" src="<%= @pokemon.img_url %>" alt="Profile Picture of <%= @pokemon.name %> ">
+<div class="container">
 
-<ul>
-  <!-- General Info -->
-  <li>Name: <%= @pokemon.name %> </li>
-  <li>Type: <%= @pokemon.poke_type.capitalize %> </li>
-</ul>
+<div class="main_info">
 
-<!-- Generates random "quote" for pokemon -->
-<p>
-  <% quotes = [ "#{@pokemon.name}, #{@pokemon.name}, #{@pokemon.name}! ", "***inquisitive look***", "#{@pokemon.name.upcase}!" ]%>
-  <%=quotes.sample %>
-</p>
+  <div class="info">
+    <ul>
+      <!-- General Info -->
+      <li>Name: <%= @pokemon.name %> </li>
+      <li>Type: <%= @pokemon.poke_type.capitalize %> </li>
+    </ul>
+  </div>
 
-<p>
-  <!-- Send back to home -->
-  <a href="/home"> <img src="../public/images/back_button.png" alt="back-button"> </a>
-</p>
+  <div class="poke_img">
+    <img class="pokemon" src="<%= @pokemon.img_url %>" alt="Profile Picture of <%= @pokemon.name %> ">
+  </div>
+
+</div>
+
+  <!-- Generates random "quote" for pokemon -->
+  <div class="quote">
+  <p>
+    <% quotes = [ "#{@pokemon.name}, #{@pokemon.name}, #{@pokemon.name}! ", "***inquisitive look***", "#{@pokemon.name.upcase}!" ]%>
+    <%=quotes.sample %>
+  </p>
+  </div>
+
+  <p>
+    <!-- Send back to home -->
+    <a href="/home" class="back"> <img src="/images/back_button.png" alt="back-button"> </a>
+  </p>
+</div>

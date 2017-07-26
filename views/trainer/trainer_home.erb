@@ -4,12 +4,13 @@
 <h3>Trainer List</h3>
 
 <% @trainers.each do |trainer| %>
-  <p> <a href="/home/cablelink/<%= trainer.id %>"> <%= trainer.name %> </a> </p>
+  <p> <a href="/home/trainer_home/<%= trainer.id %>"> <%= trainer.name %> </a> </p>
 <% end %>
 
 <h3>Become A Trainer</h3>
 
-<form action="/home/cablelink" method="post">
+<form action="/home/create_trainer" method="post">
+  <!-- prompts directory which  -->
   <label>Name:</label>
   <input type="text" name="trainer[name]" value="Ash Ketchum">
   <input type="hidden" name="trainer[level]" value=1>

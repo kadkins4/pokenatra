@@ -12,6 +12,10 @@ a, p, h2, h3 {
   font-size: 120%;
 }
 
+h3 {
+  text-align: center;
+}
+
 body {
   background-image: url(../images/pokedex.png);
   background-attachment: fixed;
@@ -20,11 +24,24 @@ body {
   letter-spacing: .25em;
 }
 
-.poke_pic {
-  border-radius: 50%;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-a:hover {
+.main_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.info li {
+  font-size: 30px;
+}
+
+a:not(.back):hover {
   padding: 20px;
   animation: pulse 1s infinite;
 }

@@ -1,1 +1,11 @@
 <h2> <%= @trainer.name %> </h2>
+<p>A page dedicated to the very best... <%= @trainer.name %> </p>
+
+<h3>Your Pokemon</h3>
+<!-- Pokemon Owned -->
+<ol>
+  <% @owned = Pokemon.where(trainer_id: @trainer.id) %>
+  <% @owned.each do |poke| %>
+  <li> <a href="/home/<%= poke.id %> "> <%=  poke.name %> </a> </li>
+  <% end %>
+</ol>

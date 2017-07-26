@@ -15,17 +15,17 @@ get '/home' do
   erb :"pokemon/home"
 end
 
-get '/home/cablelink' do
+get '/home/trainer_home' do
   @trainers = Trainer.all
-  erb :"trainer/cablelink"
+  erb :"trainer/trainer_home"
 end
 
-post '/home/cablelink' do
-  @trainer = Trainer.create(params[:name])
-  redirect "/home/cablelink"
+post '/home/create_trainer' do
+  @trainer = Trainer.create(params[:trainer])
+  redirect "/home/trainer_home/#{@trainer.id}"
 end
 
-get "/home/cablelink/:id" do
+get "/home/trainer_home/:id" do
   @trainer = Trainer.find(params[:id])
   erb :"trainer/edit_trainer"
 end
