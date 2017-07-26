@@ -1,0 +1,17 @@
+<h2>The Cablelink</h2>
+<p>The place to meet other trainers</p>
+
+<h3>Trainer List</h3>
+
+<% @trainers.each do |trainer| %>
+  <p> <a href="/home/cablelink/<%= trainer.id %>"> <%= trainer.name %> </a> </p>
+<% end %>
+
+<h3>Become A Trainer</h3>
+
+<form action="/home/cablelink" method="post">
+  <label>Name:</label>
+  <input type="text" name="trainer[name]" value="Ash Ketchum">
+  <input type="hidden" name="trainer[level]" value=1>
+  <input type="Submit" value="Create Trainer">
+</form>
