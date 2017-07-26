@@ -1,11 +1,37 @@
-<h2> <%= @trainer.name %> </h2>
-<p>A page dedicated to the very best... <%= @trainer.name %> </p>
+<div class="container">
 
-<h3>Your Pokemon</h3>
-<!-- Pokemon Owned -->
-<ol>
-  <% @owned = Pokemon.where(trainer_id: @trainer.id) %>
-  <% @owned.each do |poke| %>
-  <li> <a href="/home/<%= poke.id %> "> <%=  poke.name %> </a> </li>
-  <% end %>
-</ol>
+  <div class="main_info">
+    <div class="basic_info">
+      <h2> <%= @trainer.name %> </h2>
+      <p>
+        <% quotes = [ "trying to be the very best", "***overly enthusiastic***", "'who's that pokémon?!'" ]%>
+        <%= quotes.sample %>
+      </p>
+    </div>
+
+    <img src="<%= @trainer.img_url %>" alt="Reserved for Trainer" class="pokemon trainer_pic">
+  </div>
+
+    <h3>Your Pokemon</h3>
+    <!-- Pokemon Owned -->
+    <ol>
+      <% @owned = Pokemon.where(trainer_id: @trainer.id) %>
+      <% @owned.each do |poke| %>
+      <li> <a href="/home/<%= poke.id %> "> <%=  poke.name %> </a> </li>
+      <% end %>
+    </ol>
+
+    <h3>Haircut</h3>
+    <form action="/home/trainer_home/ <%= @trainer.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+
+      <label>New Name:</label>
+      <input type="text" name="trainer[name]" value="<%= @trainer.name %>">
+
+      <label>Update Pic:</label>
+      <input type="text" name="trainer[img_url]">
+
+      <input type="submit" value="ACCEPT CHANGES">
+    </form>
+
+</div>

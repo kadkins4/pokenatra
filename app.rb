@@ -30,6 +30,12 @@ get "/home/trainer_home/:id" do
   erb :"trainer/edit_trainer"
 end
 
+put "/home/trainer_home/:id" do
+  @trainer = Trainer.find(params[:id])
+  @trainer.update(params[:trainer])
+  redirect "/home/trainer_home/#{@trainer.id}"
+end
+
 get '/home/:id' do
   @pokemon = Pokemon.find(params[:id])
   erb :"pokemon/show"
